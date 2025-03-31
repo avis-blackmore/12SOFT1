@@ -1,0 +1,32 @@
+# Encrypt: Simple Substitute Cipher with Key
+
+def createCipher(key, cipherArray, alphabet):
+    for a in key:
+        if a not in cipherArray:
+            cipherArray.append(a)
+
+    for i in alphabet:
+        if i not in cipherArray:
+            cipherArray.append(i)
+
+def encryptCipher(plainText, cipherArray):
+    cipherText = ""
+    for p in plainText:
+        if not p == " ":
+            stAscii = ord(p)
+            #print(stAscii)
+            ciAscii = stAscii - 65
+            #print(ciAscii)
+            cipherText = cipherText + cipherArray[ciAscii]
+        else:
+            cipherText = cipherText + " "
+    return cipherText
+
+key = input("Key: ")
+plainText = input("Plaintext: ")
+
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+cipherArray = []
+
+createCipher(key, cipherArray, alphabet)
+print("Ciphertext: " + encryptCipher(plainText, cipherArray))
