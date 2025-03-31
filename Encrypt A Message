@@ -1,0 +1,17 @@
+# Encrypt A Message
+
+from crypto import Symmetric
+
+# Get text
+message = input("Enter your message: ")
+
+# Generate key
+key = Symmetric.generate_key()
+print("\nKEY (KEEP THIS SECRET):")
+print(key)
+
+
+# Encrypting
+ciphertext = Symmetric.encrypt(message, key)
+print("\nENCRYPTED MESSAGE:")
+print(ciphertext)
