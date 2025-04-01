@@ -1,0 +1,34 @@
+# Decrypt: Simple Substitute Cipher with Key
+
+def createCipher(key, cipherArray, alphabet):
+    for a in key:
+        if a not in cipherArray:
+            cipherArray.append(a)
+
+    for i in alphabet:
+        if i not in cipherArray:
+            cipherArray.append(i)
+
+    # print(cipherArray)
+
+def decryptCipher(cipherText, cipherArray):
+    plainText = ""
+    for c in cipherText:
+        if not c == " ":
+            ciAscii = cipherArray.index(c)  # Find the index of the cipher character
+            plainText += chr(ciAscii + 65)  # Convert index back to ASCII
+        else:
+            plainText += " "
+    return plainText
+
+
+key = input("Key: ")
+ciphertext = input("Ciphertext: ")
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+cipherArray = []
+createCipher(key, cipherArray, alphabet)
+
+
+# Decrypt the ciphertext
+decryptedText = decryptCipher(ciphertext, cipherArray)
+print("Plaintext: " + decryptedText)
