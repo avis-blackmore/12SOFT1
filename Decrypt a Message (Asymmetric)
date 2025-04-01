@@ -1,0 +1,12 @@
+# Decrypt a Message
+
+from crypto import Asymmetric
+
+with open('private_key.txt','r') as file:
+    private_key = " ".join(line.rstrip() for line in file)
+
+print("Enter encrypted message:")
+message = input()
+
+print("\nOriginal message:")
+print(Asymmetric.decrypt(message, private_key))
