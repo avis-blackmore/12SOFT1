@@ -1,0 +1,16 @@
+# Decrypt a Message
+
+from crypto import Symmetric
+
+print("Enter the key:")
+key = input("")
+
+
+print("\nEnter the encrypted message:")
+message = "UJCSNG WN RSIJG GCVCGNG WN TIFF"
+
+
+# Encrypting
+ogtext = Symmetric.decrypt(message, key)
+print("\nOriginal Message:")
+print(ogtext)
