@@ -1,0 +1,24 @@
+# Rolling Hash
+
+def hash_string(s):
+    # Constants
+    p = 94  # Chosen prime number
+    m = 1009  # Another chosen prime number
+
+    # Calculate hash value
+    hash_value = 0
+    length = len(s)
+
+    for i in range(length):
+        # Calculate character value
+        char_value = ord(s[i]) - ord('!') + 1  # Handling only printable ASCII characters
+        # Update hash_value using the formula provided
+        hash_value += char_value * (p ** (length - i - 1))
+
+    # Return the hash value modulo m
+    return hash_value % m
+
+# Example usage
+string_to_hash = input("String to hash: ")
+hash_result = hash_string(string_to_hash)
+print(f"Hash: {hash_result}")
