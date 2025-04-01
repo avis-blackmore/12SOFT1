@@ -1,0 +1,14 @@
+# Secure Hash Algorithm (SHA)
+
+import hashlib
+
+plain_text = input("Enter your message to hash: ")
+
+bytes = plain_text.encode("utf-8")
+
+h = hashlib.sha256(bytes)
+
+hex_hash = h.hexdigest()
+
+print("\nHex of SHA-256 Hash:")
+print(hex_hash)
