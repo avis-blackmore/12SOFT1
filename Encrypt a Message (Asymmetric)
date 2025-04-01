@@ -1,0 +1,15 @@
+# Encrypt a Message
+
+from crypto import Asymmetric
+
+# Keys
+
+public_key = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwIsdEAxotvckyPmCr0bSKGLKP4+4B/IUG+HizX0zQq7j6KP8uw9hK9J1/bSjhaCwZVqKjDF5p4A1Lq/YLuIbqzIoLBd+oJeLZNzkzKqv76mgg0KGj3ac8mLzG0tLJce6MHiQQ0bjJXOTiL8oa+99jiYJrW3dNZ+WMTwbhYaDDEQIDAQAB"
+
+# print("Public key:", public_key)
+# print("\nPrivate key:", private_key,)
+
+# Encrypting
+message = "FVPG+F3 1030 02/03"
+ciphertext = Asymmetric.encrypt(message, public_key)
+print("ENCRYPTED MESSAGE:" + "\n" + "Mq5e8U3GmGHIMx87jlD6G5wmeuXf+WxGFa+g46vN3/FoVRozof1D31EIjMtc0D7maD149TALbDEIhigiMLD9n35gWOVdH1vn84jpFuXzHFzwJWq5bKAYbF9WwOS0IEZMIfhj/dR9ZrbmIjBh07CJch6Y4uiE9ZzkAKl4w8NjCS8=")
